@@ -2880,3 +2880,95 @@
         font-size: 14px;
     }
 }
+
+
+
+/* Side Navigation Arrows CSS */
+.side-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+}
+
+.side-nav-arrow:hover {
+    background: linear-gradient(127deg, #f7fb6d 10%, #f3a661 85%);
+    border-color: #f7fb6d;
+    color: #000;
+    opacity: 1 !important;
+}
+
+.side-nav-arrow:disabled {
+    opacity: 0.2 !important;
+    cursor: not-allowed;
+}
+
+.side-nav-arrow:disabled:hover {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.side-nav-arrow.prev {
+    left: -25px;
+    border-radius: 0 8px 8px 0;
+}
+
+.side-nav-arrow.next {
+    right: -25px;
+    border-radius: 8px 0 0 8px;
+}
+
+/* Show side arrows on hover */
+.games-section:hover .side-nav-arrow {
+    opacity: 0.8;
+}
+
+.games-section:hover .side-nav-arrow:hover {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .side-nav-arrow {
+        width: 40px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .side-nav-arrow.prev {
+        left: -20px;
+    }
+
+    .side-nav-arrow.next {
+        right: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .side-nav-arrow {
+        width: 35px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .side-nav-arrow.prev {
+        left: -17px;
+    }
+
+    .side-nav-arrow.next {
+        right: -17px;
+    }
+}
